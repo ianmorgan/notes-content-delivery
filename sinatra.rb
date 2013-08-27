@@ -28,6 +28,18 @@ class NotesContentDeliveryApp < Sinatra::Base
   get '/slugs/:topic' do 
      slugs = all_slugs_for_topic(params[:topic])
      slugs.to_json  
+   end
+   
+  get '/topics' do
+     { 'java' => 'Java', 
+       'scala' => 'Scala',
+       'ruby' => 'Ruby',
+       'unix' => 'Unix',
+       'html' => 'HTML',
+       'design' => 'Design',
+       'functional-programming' => 'Functional Programming'
+       }.to_json   
+      
   end
 
   get '/about' do 
