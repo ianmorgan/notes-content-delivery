@@ -8,5 +8,5 @@ Tested with Ruby 1.9.3
 
 'bundle install' to update all dependencies 
 
-'rackup -p 4567' to run in dev mode
+'rackup -p 4401' to run in dev mode
 
