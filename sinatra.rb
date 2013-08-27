@@ -1,24 +1,17 @@
 require 'rubygems'
-#require 'sinatra'
 require 'sinatra/base'
-#require 'rack-flash'
 require 'erb'
 require 'json'
 require 'aws-sdk'
-
 require 'yaml'
 require "benchmark"
-# require 'redcarpet'
-#require 'rubypython'
 
 require File.join(File.dirname(__FILE__), 'modules/aws')
 require File.join(File.dirname(__FILE__), 'modules/elastic_search')
 
 
 class NotesContentDeliveryApp < Sinatra::Base
-
   
-  #helpers NotesHelpers
   helpers AWSIntegration
   helpers ElasticSearchIntegration
   
@@ -35,10 +28,14 @@ class NotesContentDeliveryApp < Sinatra::Base
   get '/slugs/:topic' do 
      slugs = all_slugs_for_topic(params[:topic])
      slugs.to_json  
-   end
+  end
 
   get '/about' do 
     erb :about
+  end
+  
+  get '/specifications/:end_point' do
+  
   end
 
   not_found do
