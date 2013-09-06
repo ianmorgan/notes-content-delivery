@@ -1,6 +1,6 @@
 module AWSIntegration
 
-  aws_credentials = YAML::load( File.open( ENV['HOME'] + '/.notes/dev/aws/credentials.yaml' ) )
+  aws_credentials = YAML::load( File.open( ENV['HOME'] + '/.notes/' + ENV['RACK_ENV']  +'/aws/credentials.yaml' ) )
    #puts aws_credentials.class
    #puts aws_credentials["access_key_id"]
 
