@@ -5,6 +5,7 @@ require 'json'
 require 'aws-sdk'
 require 'yaml'
 require "benchmark"
+require 'stretcher' 
 
 require File.join(File.dirname(__FILE__), 'modules/aws')
 require File.join(File.dirname(__FILE__), 'modules/elastic_search')
@@ -14,7 +15,6 @@ class NotesContentDeliveryApp < Sinatra::Base
   
   helpers AWSIntegration
   helpers ElasticSearchIntegration
-  
 
   get '/' do
     erb :home
