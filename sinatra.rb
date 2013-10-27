@@ -19,8 +19,13 @@ class NotesContentDeliveryApp < Sinatra::Base
   get '/' do
     erb :home
   end
+  
+  get '/content' do
+    redirect "/content/#{params[:topic]}/#{params[:slug]}"
+  end 
 
   get '/content/:topic/:slug' do 
+    puts "here i am"
     content = retrieve_by_key(params[:topic], params[:slug])
     content  
   end
